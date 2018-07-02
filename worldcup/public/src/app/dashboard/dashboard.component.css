@@ -1,0 +1,38 @@
+.box1 {
+    color: white;
+    width: 400px;
+    height: 850px;
+    padding-top: 10px;
+    margin: 5px;
+    background-color:black;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+.item-a {
+    grid-column: 1;
+}
+.item-b {
+    grid-column: 2;
+}
+.item-c {
+    grid-column: 3;
+}
+.item-d {
+    grid-column: 4;
+}
+.item-e {
+    grid-column: 5;
+}
+.item-f {
+    grid-column: 6;
+}
+.item-g {
+    grid-column: 7;
+}
+.container {
+    display: grid;
+    grid-template-columns: 60px 12px 25px 190px 25px 12px 25px;
+    grid-template-rows: 40px 10px;
+    grid-auto-flow: column;
+    align-content: flex-start; 
+}
