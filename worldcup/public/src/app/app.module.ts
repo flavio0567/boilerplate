@@ -10,7 +10,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UpdateMatcheComponent } from './update-matche/update-matche.component';
 import { MatcheService } from './matches.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { TableComponent } from './dashboard/table/table.component';
 
 
 @NgModule({
@@ -18,8 +17,7 @@ import { TableComponent } from './dashboard/table/table.component';
     AppComponent,
     DashboardComponent,
     UpdateMatcheComponent,
-    PageNotFoundComponent,
-    TableComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

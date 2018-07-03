@@ -122,7 +122,6 @@ var dashboard_component_1 = __webpack_require__("./src/app/dashboard/dashboard.c
 var update_matche_component_1 = __webpack_require__("./src/app/update-matche/update-matche.component.ts");
 var matches_service_1 = __webpack_require__("./src/app/matches.service.ts");
 var page_not_found_component_1 = __webpack_require__("./src/app/page-not-found/page-not-found.component.ts");
-var table_component_1 = __webpack_require__("./src/app/dashboard/table/table.component.ts");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -132,8 +131,7 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent,
                 dashboard_component_1.DashboardComponent,
                 update_matche_component_1.UpdateMatcheComponent,
-                page_not_found_component_1.PageNotFoundComponent,
-                table_component_1.TableComponent
+                page_not_found_component_1.PageNotFoundComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -162,7 +160,7 @@ module.exports = ".box1 {\n    color: white;\n    width: 400px;\n    height: 850
 /***/ "./src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<marquee behavior=\"scroll\" direction=\"left\"> ***  Next game or In action  ***  Next game or In action ***   Next game or In action  ***</marquee>\n\n<div class=\"tile is-parent\">\n    <article class=\"tile is-child notification is-info\">\n\n\n      <nav class=\"level\">\n          <div class=\"level-item has-text-centered\">\n              <div>\n              <h1><b>{{ nextTime }}</b></h1>\n              <p class=\"heading\">Team Home</p>\n              <p class=\"title\"> {{ teamHome }}</p>\n            </div>\n          </div>\n          <div class=\"level-item has-text-centered\">\n            <div>\n              <p class=\"title\">vs</p>\n            </div>\n          </div>\n          <div class=\"level-item has-text-centered\">\n              <div>\n                <p class=\"heading\">Team Away</p>\n                <p class=\"title\"> {{ teamAway }}</p>\n              </div>\n            </div>\n      </nav>\n    </article>\n</div>\n\n\n<figure class=\"image is-1x1\">\n    <img src=\"../assets/images/Sweden_Matche.jpg\">\n  </figure>\n\n\n<div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n\n<div class=\"box1\">\n  <progress class=\"progress is-success\" value=\"7\" max=\"16\">42%</progress>\n  <div *ngFor=\"let m of matches\">\n    <section class=\"container\" >\n      <!-- <div class=\"item-a\"> \n        <a href=\"https://www.fifa.com/worldcup/groups/\">{{m.group}}</a> \n      </div>  -->\n      <div class=\"item-a\">\n        <p>{{m.date }}</p>\n      </div>\n      <div class=\"item-c\">\n        <figure class=\"image is-20x20\">\n          <!-- <img src=\"m['teamHomeFlag'] }}\"> -->\n            <img src=\"../assets/images/{{m.teamHome}}.png\" alt=\"Team Home icon\">\n        </figure>\n      </div>\n      <div class=\"item-d\">\n        <a href=\"https://www.fifa.com/worldcup/teams/\"> {{ m['teamHome'] }} {{ m['scoreTeamHome'] }} x {{ m['scoreTeamAway'] }} {{ m['teamAway'] }} </a>\n      </div>\n      <div class=\"item-e\">\n        <figure class=\"image is-20x20\">\n            <!-- <img src=\"m['teamAwayFlag'] }}\"> -->\n          <img src=\"../assets/images/{{m.teamAway}}.png\" alt=\"Team Away icon\">\n        </figure> \n\n      </div>\n      <div *ngIf=\"!m.done; else second\" class=\"item-g\">\n          <p> {{ m.time}}</p>\n      </div>\n      <ng-template #second>\n        <figure class=\"image is-10x10 item-g\">\n          <div class=\"item-f\"><span><img src=\"../assets/images/check.png\"></span></div>\n        </figure> \n        </ng-template>\n\n    </section>\n  </div>\n  </div>\n</div>\n<!-- New Scores table -->\n<figure class=\"image is-1x1\">\n  <img src=\"../assets/images/Tabela.png\">\n</figure>\n"
+module.exports = "<marquee behavior=\"scroll\" direction=\"left\"> ***  Next game or In action  ***  Next game or In action ***   Next game or In action  ***</marquee>\n\n<div class=\"tile is-parent\">\n    <article class=\"tile is-child notification is-info\">\n\n\n      <nav class=\"level\">\n          <div class=\"level-item has-text-centered\">\n              <div>\n              <h1><b>{{ nextTime }}</b></h1>\n              <p class=\"heading\">Team Home</p>\n              <p class=\"title\"> {{ teamHome }}</p>\n            </div>\n          </div>\n          <div class=\"level-item has-text-centered\">\n            <div>\n              <p class=\"title\">vs</p>\n            </div>\n          </div>\n          <div class=\"level-item has-text-centered\">\n              <div>\n                <p class=\"heading\">Team Away</p>\n                <p class=\"title\"> {{ teamAway }}</p>\n              </div>\n            </div>\n      </nav>\n    </article>\n</div>\n\n<!-- Image of round -->\n<figure class=\"image is-1x1\">\n    <img src=\"../assets/images/Sweden_Matche.jpg\">\n  </figure>\n\n\n<div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n\n<div class=\"box1\">\n  <progress class=\"progress is-success\" value=\"8\" max=\"16\">50%</progress>\n  <div *ngFor=\"let m of matches\">\n    <section class=\"container\" >\n      <!-- <div class=\"item-a\"> \n        <a href=\"https://www.fifa.com/worldcup/groups/\">{{m.group}}</a> \n      </div>  -->\n      <div class=\"item-a\">\n        <p>{{m.date }}</p>\n      </div>\n      <div class=\"item-c\">\n        <figure class=\"image is-20x20\">\n          <!-- <img src=\"m['teamHomeFlag'] }}\"> -->\n            <img src=\"../assets/images/{{m.teamHome}}.png\" alt=\"Team Home icon\">\n        </figure>\n      </div>\n      <div class=\"item-d\">\n        <a href=\"https://www.fifa.com/worldcup/teams/\"> {{ m['teamHome'] }} {{ m['scoreTeamHome'] }} x {{ m['scoreTeamAway'] }} {{ m['teamAway'] }} </a>\n      </div>\n      <div class=\"item-e\">\n        <figure class=\"image is-20x20\">\n            <!-- <img src=\"m['teamAwayFlag'] }}\"> -->\n          <img src=\"../assets/images/{{m.teamAway}}.png\" alt=\"Team Away icon\">\n        </figure> \n\n      </div>\n      <div *ngIf=\"!m.done; else second\" class=\"item-g\">\n          <p> {{ m.time}}</p>\n      </div>\n      <ng-template #second>\n        <figure class=\"image is-10x10 item-g\">\n          <div class=\"item-f\"><span><img src=\"../assets/images/check.png\"></span></div>\n        </figure> \n        </ng-template>\n\n    </section>\n  </div>\n  </div>\n</div>\n<!-- New Scores table -->\n<figure class=\"image is-1x1\">\n  <img src=\"../assets/images/Tabela.png\">\n</figure>\n"
 
 /***/ }),
 
@@ -245,56 +243,6 @@ var DashboardComponent = /** @class */ (function () {
     return DashboardComponent;
 }());
 exports.DashboardComponent = DashboardComponent;
-
-
-/***/ }),
-
-/***/ "./src/app/dashboard/table/table.component.css":
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/dashboard/table/table.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<marquee behavior=\"scroll\" direction=\"left\"> ***  Next game or In action  ***  Next game or In action ***   Next game or In action  ***</marquee>\n<!-- <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> -->\n<div class=\"tile is-parent\">\n    <article class=\"tile is-child notification is-info\">\n\n\n      <nav class=\"level\">\n          <div class=\"level-item has-text-centered\">\n            <!-- <div class=\"has-text-warning\"> -->\n              <div>\n              <h1><b>{{ nextTime }}</b></h1>\n              <!-- <h1><b>neymar</b></h1> -->\n              <p class=\"heading\">Team Home</p>\n              <p class=\"title\"> {{ teamHome }}</p>\n            </div>\n          </div>\n          <div class=\"level-item has-text-centered\">\n            <!-- <div class=\"has-text-warning\"> -->\n            <div>\n              <p class=\"title\">vs</p>\n            </div>\n          </div>\n          <div class=\"level-item has-text-centered\">\n              <div>\n                <p class=\"heading\">Team Away</p>\n                <p class=\"title\"> {{ teamAway }}</p>\n              </div>\n            </div>\n      </nav>\n    </article>\n</div>\n\n\n<figure class=\"image is-1x1\">\n    <img src=\"../assets/images/ThiagoSilva.jpg\">\n  </figure>\n\n\n<div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">\n\n<div class=\"box1\">\n  <progress class=\"progress is-success\" value=\"44\" max=\"48\">92%</progress>\n  <div *ngFor=\"let m of matches\">\n    <section class=\"container\" >\n      <div class=\"item-a\"> \n        <a href=\"https://www.fifa.com/worldcup/groups/\">{{m.group}}</a> \n      </div> \n      <div class=\"item-b\">\n        <p>{{m.date}}</p>\n      </div>\n      <div class=\"item-c\">\n        <figure class=\"image is-20x20\">\n          <img src=\"../assets/images/{{m.teamHome}}.png\" alt=\"Team Home icon\">\n        </figure>\n      </div>\n      <div class=\"item-d\">\n        <a href=\"https://www.fifa.com/worldcup/teams/\"> {{ m['teamHome'] }} {{ m['scoreTeamHome'] }} x {{ m['scoreTeamAway'] }} {{ m['teamAway'] }} </a>\n      </div>\n      <div class=\"item-e\">\n        <figure class=\"image is-20x20\">\n          <img src=\"../assets/images/{{m.teamAway}}.png\" alt=\"Team Away icon\">\n        </figure> \n      </div>\n      <div *ngIf=\"!m.done; else second\" class=\"item-g\">\n          <p> {{ m.time}}</p>\n      </div>\n      <ng-template #second>\n        <figure class=\"image is-10x10 item-g\">\n          <div class=\"item-f\"><span><img src=\"../assets/images/check.png\"></span></div>\n        </figure> \n        </ng-template>\n\n    </section>\n  \n  </div>\n\n  </div>\n</div>\n\n"
-
-/***/ }),
-
-/***/ "./src/app/dashboard/table/table.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-var TableComponent = /** @class */ (function () {
-    function TableComponent() {
-    }
-    TableComponent.prototype.ngOnInit = function () {
-    };
-    TableComponent = __decorate([
-        core_1.Component({
-            selector: 'app-table',
-            template: __webpack_require__("./src/app/dashboard/table/table.component.html"),
-            styles: [__webpack_require__("./src/app/dashboard/table/table.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], TableComponent);
-    return TableComponent;
-}());
-exports.TableComponent = TableComponent;
 
 
 /***/ }),
